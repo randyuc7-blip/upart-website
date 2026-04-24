@@ -3,38 +3,91 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Thank you for reaching out to UPART. Your project request has been received."
+    />
     <title>Thank you!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <style>
       body {
-        margin: 0;
+        padding-top: 0;
+      }
+
+      .thank-you-page {
         min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 0;
+      }
+
+      .thank-you-panel {
         display: grid;
-        place-items: center;
-        padding: 2rem;
-        font-family: Arial, sans-serif;
+        gap: 1.5rem;
         text-align: center;
-        background: #ffffff;
-        color: #111111;
+        justify-items: center;
       }
 
-      main {
-        max-width: 36rem;
+      .thank-you-panel h1 {
+        max-width: none;
+        margin-bottom: 0;
       }
 
-      h1 {
-        margin: 0 0 1rem;
-      }
-
-      p {
+      .thank-you-panel p {
+        max-width: 40rem;
         margin: 0;
-        line-height: 1.6;
+        color: var(--muted);
+      }
+
+      .thank-you-panel .button {
+        margin-top: 0.5rem;
+      }
+
+      .thank-you-panel {
+        animation: thank-you-fade 700ms ease-out both;
+      }
+
+      @keyframes thank-you-fade {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .thank-you-panel {
+          animation: none;
+        }
       }
     </style>
   </head>
   <body>
-    <main>
-      <h1>Thank you!</h1>
-      <p>Your project request has been received. We&rsquo;ll get back to you soon.</p>
+    <div class="grain" aria-hidden="true"></div>
+
+    <main class="thank-you-page">
+      <div class="section-shell">
+        <div class="thank-you-panel">
+          <p class="section-kicker">Project Request Received</p>
+          <h1>Thank you!</h1>
+          <p>
+            Your project request has been received. We&rsquo;ll get back to you
+            soon.
+          </p>
+          <a class="button button-primary" href="/">Back to Home</a>
+        </div>
+      </div>
     </main>
   </body>
 </html>
